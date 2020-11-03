@@ -4,31 +4,20 @@
         <title>Practica 1</title>
         <link rel="stylesheet" href="./css/" type="text/css"/>
         <meta charset="utf-8"/>
-       
-                
     </head>
-
         <body>
-           
             <main>
-
                 <h2>Practica 1</h2>
-
-
                 <script>
                     // repetirlo 50 veces
                     // 6 numeros 
                     // 1 al 49
-                    
-                    
-                    const primitiva=[]; // array de 50 elementos£
+                    const primitiva=[]; // array de 50 elementos
 
                     function random(min, max) {
                         return Math.floor(Math.random() * (max - min + 1) + min);
                     }
 
-                    // añadimos elementos al conjunto lista_1
-                    // los set no se repiten los resultados
                     for (let i = 0; i < 50; i++){
 
                         const lista_1=[];
@@ -37,25 +26,12 @@
                             lista_1.push(random(1,49));
                             
                         }
-                        // añadimos  al array primitiva el array de 6
                        primitiva.push(lista_1);
-
                     }
                         // imprimr 
                         console.log(primitiva);
-                   
-                   
-                    
-
                 </script>
 
-               
-
-               
             </main>
-
-            
         </body>
-
-
 </html>
