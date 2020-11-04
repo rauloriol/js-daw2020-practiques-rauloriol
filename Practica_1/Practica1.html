@@ -9,24 +9,29 @@
             <main>
                 <h2>Practica 1</h2>
                 <script>
-                    // repetirlo 50 veces
-                    // 6 numeros 
-                    // 1 al 49
-                    const primitiva=[]; // array de 50 elementos
+                    
+                    const primitiva=[];     // array de 50 elementos de 6 numeros aleatorios.
 
+                    const repeticiones=50;  // Cantidad de arrays que se generan en el bucle.
+                    const numAleatorio=6;  // Cantidad de numeros aleatorios que tiene  el array.
+
+                    const numMinimo=1;    // Numero minimo  aletorio.
+                    const numMaximo =49;  // Numero máximo  aletorio.
+
+                    // Funcion para sacar numeros aleatorios
                     function random(min, max) {
                         return Math.floor(Math.random() * (max - min + 1) + min);
                     }
 
-                    for (let i = 0; i < 50; i++){
+                    // Bucle para hacer 50  repeticiones
+                    for (let i = 0; i <= repeticiones; i++){
 
-                        const lista_1=[];
-                        for (let i = 0; i < 6; i++) {
+                        const lista6Elementos=[];                               // array de 6 elementos
+                        for (let i = 0; i < numAleatorio; i++) {
 
-                            lista_1.push(random(1,49));
-                            
+                            lista6Elementos.push(random(numMinimo,numMaximo)); // Introducimos numeros aletorios del 1 al 49 a lista
                         }
-                       primitiva.push(lista_1);
+                       primitiva.push(lista6Elementos);                         
                     }
                         // imprimr 
                         console.log(primitiva);
