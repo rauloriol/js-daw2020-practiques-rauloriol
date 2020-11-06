@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Practica1_funciones</title>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <script>
+      var cadenaLetras = [];
+
+      function pedirLetras() {
+        var cadena = window.prompt('Introduce una cadena de texto');
+        var letra = cadena.toString();
+        cadenaLetras.push(letra);
+
+        while (cadena.length > 0 && cadena != null) {
+          var cadena = window.prompt('Introduce una cadena de texto');
+          cadenaLetras.push(cadena);
+        }
+        cadenaLetras.pop(-1); // quitamos la ultima letra
+
+        const cadena1 = cadenaLetras.sort((z, a) => z.localeCompare(a));
+        const cadenaInvertida = cadena1.reverse();
+        const lista1 = new Set(cadenaInvertida);
+        var listaString = [...lista1];
+        alert(listaString);
+      }
+      pedirLetras(); // Ejecutamos la funcion
+    </script>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
