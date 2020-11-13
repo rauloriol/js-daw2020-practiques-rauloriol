@@ -23,7 +23,7 @@ function Puntos(coordX, coordY) {
 
   // Método para copiar el objeto
   this.copia = () => {
-    new Puntos(this.puntoX,this.puntoY);
+    return new Puntos(this.puntoX, this.puntoY);
   };
 
   // Método para sumar dos coordenadas nuevas a las del punto devolviendo un nuevo punto
@@ -58,4 +58,4 @@ a.cambiar(nuevopuntoX, nuevopuntoY);
 // Sumar las coordenadas del punto cambiado con un nuevo punto
 a.suma(sumaPuntoX, sumaPuntoY);
 // Copia del objeto anterior
-a.copia();
+console.log(a.copia());
