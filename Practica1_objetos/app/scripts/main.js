@@ -57,5 +57,6 @@ a.cambiar(nuevopuntoX, nuevopuntoY);
 
 // Sumar las coordenadas del punto cambiado con un nuevo punto
 a.suma(sumaPuntoX, sumaPuntoY);
-// Copia del objeto anterior
+
+// Copia del objeto anterior mostrado por consola
 console.log(a.copia());
