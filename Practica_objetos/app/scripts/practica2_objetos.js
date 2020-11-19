@@ -6,13 +6,13 @@ if (!Array.prototype.mediaAritmetica) {
     this.array1.push(parseInt(cadena));
 
     // Mientras el usuario no deje en blanco el campo y de en aceptar, se siguen introduciendo numeros en el array
-    while (cadena.length > 0) {
-      cadena = window.prompt(
-        'Introduce otro numero,  (deja en blanco + Aceptar) para terminar'
-      );
+    while (true) {
+      cadena = window.prompt('Introduce otro numero');
+      if (cadena == null || cadena === '') {
+        break;
+      }
       this.array1.push(parseInt(cadena));
     }
-    this.array1.pop(-1);
 
     /** Ejecuta una función reductora sobre cada elemento del array devolviendo un único valor y se divide por la longitud del
      *array devolviendo como resultado la media aritmética del array
