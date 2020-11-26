@@ -1,0 +1,18 @@
+#contenedor {
+  display: inline-block;
+  padding: 2rem 2rem;
+  margin: 2rem 2rem;
+  border: 1px solid black;
+  background-color: lightgray;
+  box-shadow: 1px 1px 0.5px;
+}
+#correo {
+  margin-bottom: 0.5rem;
+}
+#passwd {
+  margin-bottom: 0.5rem;
+}
+button[type='submit'] {
+  border-radius: 5px;
+  box-shadow: 2px 2px 1px;
+}
