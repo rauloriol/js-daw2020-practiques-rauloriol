@@ -8,6 +8,8 @@ const boton = document.getElementById('boton');
 const corr = document.getElementById('correo');
 corr.addEventListener('focusout', function (ev) {
   const exp = /\S+@\S+\.\S+/;
+
+  // Comparar el valor introducido en campo email y compararlo con la expresion regular
   if (exp.test(email.value) === false) {
     ev.preventDefault();
     mens1.style.color = 'red';
@@ -15,7 +17,7 @@ corr.addEventListener('focusout', function (ev) {
   }
 });
 
-// si cumple la expresion regular eliminar el mensaje de aviso
+// Si cumple la expresion regular eliminar el mensaje de aviso
 corr.addEventListener('focusout', function (ev) {
   const exp = /\S+@\S+\.\S+/;
   if (exp.test(email.value) === true) {
@@ -27,6 +29,7 @@ corr.addEventListener('focusout', function (ev) {
 const contrasenya = document.getElementById('passwd');
 contrasenya.addEventListener('focusout', function (ev) {
   const exp = /^[a-zA-Z]{8,10}$/;
+  // Comparar el valor introducido en campo contraseña y compararlo con la expresion regular
   if (exp.test(pass.value) === false) {
     ev.preventDefault();
     mens2.style.color = 'red';
@@ -34,7 +37,7 @@ contrasenya.addEventListener('focusout', function (ev) {
   }
 });
 
-// si cumple la expresion regular eliminar el mensaje de aviso
+// Si cumple la expresion regular eliminar el mensaje de aviso
 contrasenya.addEventListener('focusout', function (ev) {
   const exp = /^[a-zA-Z]{8,10}$/;
   if (exp.test(pass.value) === true) {
@@ -43,7 +46,7 @@ contrasenya.addEventListener('focusout', function (ev) {
   }
 });
 
-// cancelar la accion del submit
+// Cancelar la accion del submit
 boton.addEventListener('submit', function (ev) {
   ev.preventDefault();
 });
