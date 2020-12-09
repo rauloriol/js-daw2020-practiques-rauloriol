@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practica 2</title>
+    <script type="module">
+      import * as cronometro from '../scripts/temporizador.js'; // importamos los metodos del script
+
+      let contenedorpadre = document.getElementById('contador');
+
+      let parrafo1 = document.createElement('p');
+      let parrafo2 = document.createElement('p');
+      contenedorpadre.appendChild(parrafo1); // añadimos parrafo en contenedor padre
+      contenedorpadre.appendChild(parrafo2); // añadimos nuevo parrafo en contenedor padre
+
+      // Llamamos a la funcion cuenta pasando los parametros de tiempo inicial, elemento a crear, intervalo y funcion callback
+      cronometro.cuenta(6, parrafo1, 1000);
+      cronometro.cuenta(60, parrafo2, 100, () => {
+        parrafo2.textContent = 'FIN';
+      });
+    </script>
+  </head>
+  <h2>Practica 2 - Temporizador</h2>
+  <body>
+    <div id="contador"></div>
+  </body>
+</html>
