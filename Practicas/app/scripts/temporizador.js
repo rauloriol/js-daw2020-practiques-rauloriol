@@ -34,14 +34,14 @@ async function cuenta(
 ) {
   let contador = numeroInicial; // Establecemos un contador
 
-  // Mientras el contador no llege a cero ejecutamos la promesa
+  // Mientras el tiempo no sea cero
   do {
     const promesa = temporizador(intervalo);
 
     try {
       // Espero a que la promsea se cumpla
       await promesa;
-      contenedor.textContent = contador--; // Disminuye el valor del contador segun el intervalo
+      contenedor.textContent = contador--; // Disminuye el valor del contador
     } catch (error) {
       // cuando la promesa no se cumple se devuelve mensaje de error y se reseta el temporizdor
       console.error(error.message);
