@@ -1,0 +1,27 @@
+
+:root{
+    background-color: darkgray;
+}
+div#contenedor{
+    text-align: center;
+    margin-top: 10rem;
+    color: white;
+    font-size: 20px;
+}
+
+article#formulario  {
+    text-align: center;
+    margin-top: 10rem;
+    
+}
+article#formulario button[type="submit"]  {
+    
+    background-color:cornflowerblue;
+    margin-top: 2.5rem;
+    padding: 0.25rem 1rem;
+    box-shadow: 2px 2px 1.5px grey;
+}
+article#formulario button[type="submit"]:hover  {
+    background-color:lightseagreen;
+    font-weight: bold;
+}

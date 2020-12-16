@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página 3</title>
+    <link rel="stylesheet" href="../../styles/pagina3.css" />
+  </head>
+  <body>
+    <main>
+      <article id="contenedorformulario">
+        <form name="formulario" method="POST">
+          <div class="formulariofila">
+            <label for="pregunta">Pregunta</label><br>
+            <textarea name="pregunta" id="pregunta" required cols="55" rows="5">
+            </textarea>
+
+          </div>
+
+
+          <div class="formulariofila">
+            <label for="verdadero">Verdadero</label>
+            <input
+              type="radio"
+              name="elegir"
+              id="verdadero"
+              value="verdadero"
+            />
+
+            <label for="falso">Falso</label>
+            <input type="radio" name="elegir" id="falso" value="falso" />
+          </div>
+
+          <div class="formulariofila">
+            <label for="puntuar">Puntuación</label>
+            <input
+              type="number"
+              name="puntuar"
+              id="score"
+              min="0"
+              max="9"
+              maxlength="1"
+              required
+            />
+          </div>
+
+          <div class="formulariofila">
+            <a id="atras" href="./pagina2.html">Atras</a>
+            <button type="submit" id="boton">Grabar</button>
+          </div>
+        </form>
+      </article>
+
+      <article id="contenedorpreguntas">
+        <table id="tablapreguntas">
+          <tr>
+            <th>Pregunta</th>
+            <th>Respuesta</th>
+            <th>Puntuación</th>
+            <th>Estado</th>
+          </tr>
+
+          <!-- Se creara desde JV una fila por cada nueva pregunta -->
+          <tr >
+            <td>Pregun 1</td>
+            <td>Verdadero</td>
+            <td>5</td>
+            <td>OK</td>
+          </tr>
+
+          <tr id="tablacontenedora">
+
+          </tr>
+        </table>
+      </article>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <script src="../../scripts/proyecto/pagina3.js"></script>
+  </body>
+</html>

@@ -33,7 +33,8 @@
     "mocha": "^6.2.3",
     "prettier": "^2.1.2",
     "standard": "^16.0.1",
-    "yargs": "13.2.4"
+    "yargs": "13.2.4",
+    "js-cookie": "2.2.1"
   },
   "scripts": {
     "serve:test": "cross-env NODE_ENV=test gulp serve",
