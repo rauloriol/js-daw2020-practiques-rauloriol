@@ -5,18 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Página 3</title>
     <link rel="stylesheet" href="../../styles/pagina3.css" />
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <script src="../../scripts/proyecto/pagina3.js" type="module"></script>
   </head>
   <body>
     <main>
       <article id="contenedorformulario">
-        <form name="formulario" method="POST">
+        <form name="formulario" id="formupagina">
           <div class="formulariofila">
-            <label for="pregunta">Pregunta</label><br>
-            <textarea name="pregunta" id="pregunta" required cols="55" rows="5">
+            <label for="pregunta">Pregunta</label><br />
+            <textarea
+              name="pregunta"
+              id="pregunta"
+              required
+              cols="55"
+              rows="5"
+              required
+            >
             </textarea>
-
           </div>
-
 
           <div class="formulariofila">
             <label for="verdadero">Verdadero</label>
@@ -24,11 +31,11 @@
               type="radio"
               name="elegir"
               id="verdadero"
-              value="verdadero"
+              value="Verdadero"
             />
 
             <label for="falso">Falso</label>
-            <input type="radio" name="elegir" id="falso" value="falso" />
+            <input type="radio" name="elegir" id="falso" value="Falso" />
           </div>
 
           <div class="formulariofila">
@@ -45,36 +52,26 @@
           </div>
 
           <div class="formulariofila">
-            <a id="atras" href="./pagina2.html">Atras</a>
-            <button type="submit" id="boton">Grabar</button>
+            <button id="atras">Atras</button>
+            <button id="grabar" disabled>Grabar</button>
           </div>
         </form>
       </article>
 
       <article id="contenedorpreguntas">
         <table id="tablapreguntas">
-          <tr>
-            <th>Pregunta</th>
-            <th>Respuesta</th>
-            <th>Puntuación</th>
-            <th>Estado</th>
-          </tr>
+          <thead>
+            <tr>
+              <th>Pregunta</th>
+              <th>Respuesta</th>
+              <th>Puntuación</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
 
-          <!-- Se creara desde JV una fila por cada nueva pregunta -->
-          <tr >
-            <td>Pregun 1</td>
-            <td>Verdadero</td>
-            <td>5</td>
-            <td>OK</td>
-          </tr>
-
-          <tr id="tablacontenedora">
-
-          </tr>
+          <tbody id="tablacontenedora"></tbody>
         </table>
       </article>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
-    <script src="../../scripts/proyecto/pagina3.js"></script>
   </body>
 </html>
