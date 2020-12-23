@@ -60,6 +60,11 @@ function comprobarCampos() {
  */
 function crearCookies() {
   const padre = document.getElementById('tablapreguntas');
+  const hijo = document.createElement('tr');
+  const hijo1 = document.createElement('td');
+  const hijo2 = document.createElement('td');
+  const hijo3 = document.createElement('td');
+  const hijo4 = document.createElement('td');
 
   const respuesta = JSON.stringify(cuestionario);
   Cookies.set('cuestionario', respuesta, { expires: 7 }, { path: '' });
@@ -69,12 +74,6 @@ function crearCookies() {
 
   for (const cuestionario of objetoCuestionario) {
     for (const pregunta of cuestionario.preguntas) {
-      var hijo = document.createElement('tr');
-      var hijo1 = document.createElement('td');
-      var hijo2 = document.createElement('td');
-      var hijo3 = document.createElement('td');
-      var hijo4 = document.createElement('td');
-
       hijo1.textContent = pregunta.titulo;
       hijo2.textContent = pregunta.elegir;
       hijo3.textContent = pregunta.puntuar;

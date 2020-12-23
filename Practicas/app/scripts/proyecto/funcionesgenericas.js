@@ -1,4 +1,3 @@
-
 /**
  * Funcion que devuelve la fecha en formato string
  * @returns {string}  Fecha en formato dd-mm-yyyy hh:m:ss
@@ -32,7 +31,6 @@ function obtenerFecha() {
 
   return fecha.toString();
 }
-
 
 /**
  * Funcion donde se declara una promesa, resolve cuando pasa un tiempo
