@@ -40,7 +40,7 @@ async function procesarFetch(numsecs, user) {
       method: 'GET',
     });
 
-    // En el caso de obtener un estado 404 o otro estado diferente de 200 a 299, obtendremos un error
+    // En el caso de obtener un estado 404 o otro estado diferente de 200 a 299, creamos un error
     if (obtenerUsuario.ok === false) throw new Error(obtenerUsuario.status);
 
     // Si la peticion funciona correctamente, transformamos la respuesta a Json
@@ -69,9 +69,11 @@ async function procesarFetch(numsecs, user) {
 
     // Del objeto Json extraemos nombre
     etiquetaName.textContent = jsonInsertUser.json.first_name;
-  } catch (error) {
-    console.log(error);
-  } finally {
+    // Si todo va bien el estado sera 200
     etiquetaStatus.textContent = status;
+
+    // Si existe un error se muestra el estado del mensaje
+  } catch (error) {
+    etiquetaStatus.textContent = error.message;
   }
 }
