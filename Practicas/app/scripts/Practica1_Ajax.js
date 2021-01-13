@@ -23,8 +23,8 @@ function clearFields() {
 }
 
 /**
- * Funcion que de forma asincrona obtiene un  usuario de 'https://reqres.in/api/users/'
- * si la peticion es correcta se guarda mediante una peticion post en 'https://httpbin.org/post'
+ * Funcion que de forma asincrona que  obtiene un  usuario del API 'https://reqres.in/api/users/'
+ * si la peticion es correcta se hace una  peticion post enviando los datos de ese usuario a 'https://httpbin.org/post'
  * @param {Int} numsecs  Numero de segundos para obtener el usuario
   @param {Int} user numero Id del usuario
  */
@@ -36,6 +36,7 @@ async function procesarFetch(numsecs, user) {
   const status = '200'; // SI toodo es correcto devuelve un estado 200
 
   try {
+    // Obtengo datos de usuario mediante peticion GET a la BASE_URL
     const obtenerUsuario = await fetch(`${BASE_URL}${user}?delay=${numsecs}`, {
       method: 'GET',
     });
@@ -59,6 +60,7 @@ async function procesarFetch(numsecs, user) {
       },
     };
 
+    // Envio de datos con el metodo POST
     const addUsuario = await fetch(POSTMAN_URL, payload);
 
     // If second API answer response.ok = false, throw an error
