@@ -1,19 +1,34 @@
 // Se pide permiso al usuario para recibir notificaciones solo si hace falta
-const permisoNotif = Notification.permission;
+function notifyMe() {
+  // Comprobamos si el navegador soporta las notificaciones
+  if (!('Notification' in window)) {
+    alert('Este navegador no soporta las notificaciones del sistema');
+  }
 
-if (permisoNotif == 'default') {
-  Notification.requestPermission();
+  // Si no, tendremos que pedir permiso al usuario
+  else if (Notification.permission !== 'denied') {
+    Notification.requestPermission(function (permission) {
+      // Si el usuario acepta, lanzamos la notificación
+      if (permission === 'granted') {
+        const notification = new Notification('Gracias majo!');
+        console.log(notification);
+      }
+    });
+  }
 }
+
+notifyMe();
+cuentaAtras();
 
 /**
  * Temporizador para la cuenta atrás
- * @param {Number} ms Milisegundos para el temporizador
+ * @param {Number} milisegundos Milisegundos para el temporizador
  */
-function temporizador(ms) {
+function temporizador(milisegundos) {
   return new Promise(function (resolve, reject) {
     setTimeout(() => {
       resolve('Tiempo agotado');
-    }, ms);
+    }, milisegundos);
   });
 }
 
@@ -26,7 +41,7 @@ function mostrarNotifVideo() {
   });
 
   notif.addEventListener('click', () => {
-    window.open('../pages/Practica2_APIS_video.html');
+    location.href('../pages/Practica2_APIS_video.html');
   });
 }
 
@@ -43,24 +58,13 @@ async function cuentaAtras() {
     const promesa = temporizador(1000);
 
     try {
+      // se resuelve la promesa
       await promesa;
       contador--;
       temp.innerHTML = contador;
     } catch (error) {
       console.log(error);
-      contador = -1;
     }
-    /* await promesa
-      .then(() => {
-        num--;
-        temp.innerHTML = num;
-      })
-      .catch((error) => {
-        console.log(error);
-        num = -1;
-      }); */
   }
   mostrarNotifVideo();
 }
-
-cuentaAtras();

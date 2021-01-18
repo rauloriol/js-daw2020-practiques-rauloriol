@@ -1,5 +1,5 @@
 const video = document.getElementById('video');
-const pDuracion = document.getElementById('duracion');
+const parrafoDuracion = document.getElementById('duracion');
 
 // Cuando se haga click izquierdo en el video se pausará o reanudará.
 video.addEventListener('click', (ev) => {
@@ -16,12 +16,12 @@ video.addEventListener('contextmenu', (event) => {
   let seg = '';
 
   if (tiempoReproduccion > 59) {
-    min = Math.floor(tiempoReproduccion / 60);
-    seg = tiempoReproduccion % 60;
+    min = tiempoReproduccion / 60;
+    seg = min / 60;
   } else {
     min = 0;
     seg = tiempoReproduccion;
   }
 
-  pDuracion.innerHTML = 'Duracion: ' + min + ':' + seg;
+  parrafoDuracion.innerHTML = `Duracion: ${min}:${seg}`;
 });
