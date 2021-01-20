@@ -11,7 +11,6 @@ function notifyMe() {
       // Si el usuario acepta, lanzamos la notificación
       if (permission === 'granted') {
         const notification = new Notification('Gracias majo!');
-        console.log(notification);
       }
     });
   }
@@ -41,7 +40,7 @@ function mostrarNotifVideo() {
   });
 
   notif.addEventListener('click', () => {
-    location.href('../pages/Practica2_APIS_video.html');
+    window.open('../pages/Practica2_APIS_video.html');
   });
 }
 
