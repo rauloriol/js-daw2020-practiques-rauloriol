@@ -10,7 +10,7 @@ function notifyMe() {
     Notification.requestPermission(function (permission) {
       // Si el usuario acepta, lanzamos la notificación
       if (permission === 'granted') {
-        const notification = new Notification('Gracias majo!');
+        console.info('Notificaciones habilitadas');
       }
     });
   }
