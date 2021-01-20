@@ -20,7 +20,7 @@ notifyMe();
 cuentaAtras();
 
 /**
- * Temporizador para la cuenta atrás
+ * Temporizador realiza la cuenta atrás
  * @param {Number} milisegundos Milisegundos para el temporizador
  */
 function temporizador(milisegundos) {
@@ -32,7 +32,8 @@ function temporizador(milisegundos) {
 }
 
 /**
- * Crea la notificación y el evento de "click" que lo lleva a la página del video
+ * Se crea la notificacion y con el evento click se redigire a la pagina donde
+ * se encuentra el video
  */
 function mostrarNotifVideo() {
   const notif = new Notification('Información', {
@@ -45,8 +46,8 @@ function mostrarNotifVideo() {
 }
 
 /**
- * Se hace una cuenta atrás desde 5.
- * Cuando llega a 0 se llama a la función mostrarNotifVideo().
+ * Funcion que ejecuta una cuentra atras de 5 segundos
+ * al final la cuentra atrás se ejecuta la notificacion
  */
 async function cuentaAtras() {
   const temp = document.getElementById('temporizador');
