@@ -33,6 +33,10 @@ $(() => {
     .next()
     .addClass('highlight');
 
-  // Marcar en negrita "highligth"
-  $('table tr:nth-child(6) td:first-child').next().addClass('highlight');
+  // Marcar en negrita "highligth" La segunda columna y la tercera que primera columna, las celdad contengan el text "et"
+  $(
+    'table tr:nth-child(5) td:first-child,tr:nth-child(4) td:first-child, tr:nth-child(3) td:first-child'
+  )
+    .nextUntil('tr')
+    .addClass('highlight');
 });
