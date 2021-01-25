@@ -13,7 +13,6 @@
  * Mover los foodnoter
  */
 const $footer = $('.footnote').get(); // seleccionar los spans
-
 $('div#footer').before($footer); // Seleccionar el footer y instroducir los spans antes
 
 /**
