@@ -1,1 +1,3 @@
-$('div h1').css('background', 'green');
+$(document).ready(() => {
+  $('div h1').css('background', 'green');
+});
