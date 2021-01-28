@@ -12,31 +12,28 @@ $(() => {
   // Añadir logos a los enlaces
   $('a[href^="mailto"]').addClass('mailto');
   $('a[href$=".pdf"]').addClass('pdflink');
-  $('a[href^="http"],a[href~="henry"]').addClass('external');
+  $('a[href^="http"],a[href~="henry"]').addClass('henrylink');
 
   // Cambiar color de  las filas de una tabla que son impares con odd/even
   $('table tr:nth-child(odd)').addClass('alt');
 
   // Marcar en negrita las obras referidas a Henry
-  $(
-    'table tr:nth-child(7) td:first-child, tr:nth-child(6) td:first-child '
-  ).addClass('highlight');
+  $('table tr td:contains("Henry")').addClass('highlight');
   //= ======================================================================
   /**
    * PRÁCTICA 3 JQUERY
    */
 
-  // Marcar en negrita "highligth"  history
-  $(
-    'table tr:nth-child(7) td:first-child, table tr:nth-child(6) td:first-child'
-  )
+  // Marcar en negrita "highligth"  a la celda contigua que tenga henry como texto
+  $('table')
+    .first()
+    .find('tr')
+    .children('td:contains("Henry")')
     .next()
     .addClass('highlight');
 
-  // Marcar en negrita "highligth" La segunda columna y la tercera que primera columna, las celdad contengan el text "et"
-  $(
-    'table tr:nth-child(5) td:first-child,tr:nth-child(4) td:first-child, tr:nth-child(3) td:first-child'
-  )
-    .nextUntil('tr')
+  // Marcar en negrita "highligth" a la primera tabla de todas las celdas que son contiguas y que tienen el texto "et"
+  $('table:nth-of-type(1) tr > td:contains("et")')
+    .nextAll()
     .addClass('highlight');
 });
