@@ -29,23 +29,20 @@ $(document).ready(() => {
     $estrecho.removeClass('selected');
     $ancho.removeClass('selected');
     $(this).addClass('selected');
-    $('main').removeClass('poem chapter narrow large');
+    $('main').removeClass();
   });
   $estrecho.on('click', function (ev) {
     $botonesEstilos.toggleClass('hidden');
     $defecto.removeClass('selected');
     $ancho.removeClass('selected');
     $(this).addClass('selected');
-
-    $('main').removeClass('large chapter ');
-    $('main').addClass('narrow chapter ');
+    $('main').removeClass().addClass('narrow chapter ');
   });
   $ancho.on('click', function (ev) {
     $botonesEstilos.toggleClass('hidden');
     $defecto.removeClass('selected');
     $estrecho.removeClass('selected');
     $(this).addClass('selected');
-    $('main').removeClass('narrow chapter ');
-    $('main').addClass('large chapter ');
+    $('main').removeClass().addClass('large chapter ');
   });
 });
