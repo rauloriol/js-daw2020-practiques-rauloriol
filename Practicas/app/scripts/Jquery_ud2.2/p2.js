@@ -1,7 +1,7 @@
 const $switcher = $('div.switcher');
 const $boton = $('<div/>', {
   html:
-    '<button class="boton">Defecto</button><button class="boton">Estrecho</button><button class="boton">Grande</button>',
+    '<button data-style="default">Defecto</button><button data-style="narrow">Estrecho</button><button data-style="large">Grande</button>',
   class: 'cambiarEstilos hidden',
 });
 
